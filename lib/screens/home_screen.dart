@@ -16,8 +16,8 @@ class HomeScreen extends StatelessWidget {
             const Icon(Icons.shield, size: 120, color: Colors.orangeAccent),
             const SizedBox(height: 20),
             Text(
-              'Epic RPG Combat',
-              style: GoogleFonts.cinzel(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
+              'RPG Combat Tracker',
+              style: GoogleFonts.cinzel(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
             ElevatedButton.icon(
