@@ -37,10 +37,18 @@ class GameController extends ChangeNotifier {
 
   void startCombat() {
     final random = Random();
+
     for (var entity in _entities) {
       entity.initiative = random.nextInt(20) + 1;
     }
-    _entities.sort((a, b) => b.initiative.compareTo(a.initiative));
+
+    _entities.sort((a, b) {
+      if (a.isPlayer && !b.isPlayer) return -1;
+      if (!a.isPlayer && b.isPlayer) return 1;
+
+      return b.initiative.compareTo(a.initiative);
+    });
+
     _currentTurnIndex = 0;
     _winnerMessage = null;
     notifyListeners();
