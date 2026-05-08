@@ -19,14 +19,14 @@ class RPGCombatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Epic RPG Combat',
+      title: 'RPG Combat Tracker',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
         textTheme: GoogleFonts.cinzelTextTheme(Theme.of(context).textTheme),
       ),
-      home: const HomeScreen(), // Nossa nova Splash/Home
+      home: const HomeScreen(),
     );
   }
 }
