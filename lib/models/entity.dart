@@ -1,29 +1,30 @@
-import 'package:flutter/foundation.dart';
-
 class Entity {
-  final String id;
-  final String name;
-  final int maxHp;
+  String id;
+  String name;
+  int maxHp;
   int currentHp;
-  final int initiative;
+  bool isPlayer;
+  int initiative;
 
   Entity({
     required this.id,
     required this.name,
     required this.maxHp,
     required this.currentHp,
-    required this.initiative,
+    required this.isPlayer,
+    this.initiative = 0,
   });
 
-  void takeDamage(int amount) {
-    currentHp -= amount;
+  void takeDamage(int damage) {
+    currentHp -= damage;
     if (currentHp < 0) currentHp = 0;
   }
 
-  void heal(int amount) {
-    currentHp += amount;
+  bool get isDead => currentHp <= 0;
+
+  void update({required String newName, required int newMaxHp}) {
+    name = newName;
+    maxHp = newMaxHp;
     if (currentHp > maxHp) currentHp = maxHp;
   }
-
-  bool get isDead => currentHp <= 0;
 }
